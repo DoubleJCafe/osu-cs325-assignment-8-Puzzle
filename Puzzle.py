@@ -10,8 +10,8 @@ def solve_puzzle(Board, Source, Destination):
     queue = [Source]
     neighbors = [(0, -1, 'L'), (-1, 0, 'U'), (0, 1, 'R'), (1, 0, 'D')]
 
-    directions = [[""] * rows for _ in range(cols)]
-    visited = [[False] * rows for _ in range(cols)]
+    directions = [[""] * cols for _ in range(rows)]
+    visited = [[False] * cols for _ in range(rows)]
     visited[Source[0]][Source[1]] = True
 
     while len(queue) > 0:
@@ -53,4 +53,3 @@ def path_Taken(dir, Source, Destiniation):
             string = 'D' + string
             curr = (curr[0] - 1, curr[1])
     return directions[::-1], string
-
